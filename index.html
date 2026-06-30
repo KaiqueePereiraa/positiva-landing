@@ -11,9 +11,9 @@
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
   :root {
-    --lime: #C8FF00;
-    --lime-dim: #a8d900;
-    --navy: #0D1B3E;
+    --lime: #BEF575;
+    --lime-dim: #a8d966;
+    --navy: #212B37;
     --dark: #0A0E1A;
     --dark-card: #111827;
     --dark-border: #1e2d4a;
@@ -849,7 +849,7 @@
 <!-- ── STATS BAR ── -->
 <div class="stats-bar">
   <div class="stat">
-    <div class="stat-num">+5 anos</div>
+    <div class="stat-num">+11 anos</div>
     <div class="stat-label">de excelência</div>
   </div>
   <div class="stat-divider"></div>
@@ -864,8 +864,8 @@
   </div>
   <div class="stat-divider"></div>
   <div class="stat">
-    <div class="stat-num">Seg–Sex 5h</div>
-    <div class="stat-label">abertura diária</div>
+    <div class="stat-num">7 dias</div>
+    <div class="stat-label">por semana, todos os dias</div>
   </div>
 </div>
 
@@ -1070,6 +1070,11 @@
           </select>
         </div>
 
+        <div class="form-group" style="position:absolute;left:-9999px;width:1px;height:1px;overflow:hidden" aria-hidden="true">
+          <label for="website">Não preencha este campo</label>
+          <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+        </div>
+
         <button type="submit" class="form-submit" id="submitBtn">
           <span id="btnText">Quero garantir minha vaga 💚</span>
           <div class="spinner" id="spinner"></div>
@@ -1093,6 +1098,17 @@
         Já quero fechar agora →
       </a>
     </div>
+
+    <div class="success-state" id="errorState">
+      <div class="success-icon" style="border-color:#FF5A5A">⚠️</div>
+      <h3 class="success-title" style="color:#FF5A5A">Não conseguimos enviar</h3>
+      <p class="success-text">
+        Tivemos uma instabilidade ao registrar seus dados. Por favor, fale direto com a gente pelo WhatsApp para garantir sua vaga.
+      </p>
+      <a href="https://wa.me/55SEUNUMEROAQUI" target="_blank" class="success-link">
+        Falar no WhatsApp →
+      </a>
+    </div>
   </div>
 </section>
 
@@ -1103,7 +1119,7 @@
   <p class="section-label" style="text-align:left;margin-bottom:8px">Dúvidas frequentes</p>
   <div class="faq-item">
     <div class="faq-q">Qual o horário de funcionamento?</div>
-    <div class="faq-a">Segunda a sexta das 05h às 22h — Sábado das 08h às 14h — Domingos e feriados das 09h às 13h.</div>
+    <div class="faq-a">Segunda a sexta das 05h às 22h — Sábado das 08h às 15h — Domingos e feriados das 09h às 13h.</div>
   </div>
   <div class="faq-item">
     <div class="faq-q">Tem Recreio Positiva (Espaço Kids)?</div>
@@ -1162,10 +1178,13 @@
     const btnText = document.getElementById('btnText');
     const spinner = document.getElementById('spinner');
 
-    const nome = document.getElementById('nome').value.trim();
+    const nome = document.getElementById('nome').value.trim().substring(0, 120);
     const telefone = document.getElementById('telefone').value.trim();
-    const email = document.getElementById('email').value.trim();
+    const email = document.getElementById('email').value.trim().substring(0, 120);
     const plano = document.getElementById('plano').value;
+    const website = document.getElementById('website').value;
+
+    if (website) { return; }
 
     if (!nome || !telefone || !email) {
       alert('Por favor, preencha seu nome, WhatsApp e e-mail.');
@@ -1177,13 +1196,19 @@
     spinner.style.display = 'block';
 
     const payload = {
-      nome, telefone, email,
-      plano: plano || 'Não informado',
-      origem: 'Landing Page — A Melhor Condição do Ano',
-      data_hora: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' }),
-      url: window.location.href
+      data: {
+        customer: {
+          name: nome,
+          phone: telefone.replace(/\D/g, ''),
+          email: email
+        },
+        source: 'landing-page',
+        plano: plano || 'Não informado',
+        data_hora: new Date().toLocaleString('pt-BR', { timeZone: 'America/Sao_Paulo' })
+      }
     };
 
+    let sendFailed = false;
     try {
       await fetch(WEBHOOK_URL, {
         method: 'POST',
@@ -1191,10 +1216,17 @@
         body: JSON.stringify(payload),
         mode: 'no-cors'
       });
-    } catch(err) { console.error('Webhook error:', err); }
+    } catch(err) {
+      console.error('Webhook error:', err);
+      sendFailed = true;
+    }
 
     document.getElementById('form-container').style.display = 'none';
-    document.getElementById('successState').classList.add('visible');
+    if (sendFailed) {
+      document.getElementById('errorState').classList.add('visible');
+    } else {
+      document.getElementById('successState').classList.add('visible');
+    }
   });
 
   /* faq */
