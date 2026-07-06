@@ -173,6 +173,16 @@
 
   .hero-cta:hover { background: var(--lime-dim); transform: translateY(-2px); }
 
+  .hero-justify {
+    font-size: 15px;
+    color: var(--muted);
+    max-width: 520px;
+    line-height: 1.5;
+    margin-bottom: 28px;
+  }
+
+  .hero-justify strong { color: var(--lime); }
+
   /* ── PHOTO STRIP ── */
   .photo-strip {
     display: grid;
@@ -272,8 +282,19 @@
     font-size: clamp(36px, 6vw, 64px);
     text-transform: uppercase;
     line-height: 1;
-    margin-bottom: 48px;
+    margin-bottom: 16px;
   }
+
+  .plans-subtitle {
+    text-align: center;
+    max-width: 560px;
+    margin: 0 auto 48px;
+    color: var(--muted);
+    font-size: 15px;
+    line-height: 1.5;
+  }
+
+  .plans-subtitle strong { color: var(--lime); }
 
   .plans-grid {
     display: grid;
@@ -359,6 +380,23 @@
   .plan-price .curr { font-family: var(--font-head); font-size: 24px; margin-top: 10px; }
   .plan-price .num { font-family: var(--font-head); font-size: 64px; line-height: 1; }
   .plan-price .mo { font-family: var(--font-cond); font-size: 14px; color: var(--muted); align-self: flex-end; margin-bottom: 8px; }
+
+  .plan-old-price {
+    font-size: 13px;
+    color: var(--muted);
+    margin-bottom: 2px;
+  }
+
+  .plan-old-price span {
+    text-decoration: line-through;
+    color: rgba(255,255,255,0.4);
+  }
+
+  .plan-old-price strong {
+    color: var(--lime);
+    text-decoration: none;
+    font-weight: 700;
+  }
 
   .plan-validity {
     font-family: var(--font-cond);
@@ -828,13 +866,14 @@
   <div class="hero-gradient"></div>
 
   <div class="hero-content">
-    <div class="hero-badge">Vagas Limitadas</div>
+    <div class="hero-badge">🎉 11 Anos Positiva Club</div>
     <p class="hero-eyebrow">Positiva Club — Bem-estar na sua melhor forma</p>
     <h1 class="hero-title">
       A Melhor<br>
       <span class="lime">Condição</span><br>
       Do Ano.
     </h1>
+    <p class="hero-justify">Para comemorar nossos <strong>11 anos</strong>, liberamos o menor preço do ano nos planos anuais. Depois de 31/07/26 eles voltam ao valor normal.</p>
     <div class="hero-meta">
       <div class="hero-deadline">Válida até <span>31/07/2026</span></div>
       <div class="hero-price-pill">
@@ -887,8 +926,9 @@
 
 <!-- ── PLANS ── -->
 <section class="plans">
-  <p class="section-label">Escolha seu plano</p>
+  <p class="section-label">🎉 Oferta de aniversário · 11 anos Positiva Club</p>
   <h2 class="section-title">A partir de <span style="color:var(--lime)">R$96</span>/mês</h2>
+  <p class="plans-subtitle">Preço especial para comemorar nossos <strong>11 anos</strong> — o menor do ano. Válido só até 31/07/26, depois os planos voltam ao valor normal.</p>
 
   <div class="plans-grid">
 
@@ -900,18 +940,18 @@
       <div class="plan-body">
         <p class="plan-name">Seja Positiva</p>
         <p class="plan-desc">Musculação + todas as aulas coletivas. O combo completo para quem quer resultado de verdade.</p>
+        <p class="plan-old-price">De <span>R$156,00</span>/mês · <strong>economize R$60/mês</strong></p>
         <div class="plan-price">
           <span class="curr">R$</span>
           <span class="num">96</span>
           <span class="mo">/mês</span>
         </div>
-        <p class="plan-validity">⏰ Válido até 31/07/26</p>
+        <p class="plan-validity">🎉 Preço de aniversário · válido até 31/07/26</p>
         <ul class="plan-features">
           <li>Musculação completa</li>
           <li>Fit Dance, Power, Core, Cycling, Yoga</li>
           <li>Isenção de adesão</li>
-          <li>PIX anual: R$ 1.152,00</li>
-          <li>Cartão 12x de R$ 116,00</li>
+          <li>Cartão 12x de R$ 96,00</li>
           <li>Recorrente: R$ 156,00/mês</li>
         </ul>
         <a href="#garantir" class="plan-cta">Quero esse plano</a>
@@ -927,18 +967,18 @@
       <div class="plan-body">
         <p class="plan-name">Evolução Positiva</p>
         <p class="plan-desc">Tudo do Seja + Diagnóstico Corporal Anovetor e Ajuste de Treino com professor exclusivo.</p>
+        <p class="plan-old-price">De <span>R$196,00</span>/mês · <strong>economize R$60/mês</strong></p>
         <div class="plan-price">
           <span class="curr">R$</span>
           <span class="num">136</span>
           <span class="mo">/mês</span>
         </div>
-        <p class="plan-validity">⏰ Válido até 31/07/26</p>
+        <p class="plan-validity">🎉 Preço de aniversário · válido até 31/07/26</p>
         <ul class="plan-features">
           <li>Tudo do Seja Positiva</li>
           <li>Balança Anovetor + avaliação postural</li>
           <li>Ajuste de treino agendado (máx. 5 pessoas)</li>
-          <li>PIX anual: R$ 1.632,00</li>
-          <li>Cartão 12x de R$ 156,00</li>
+          <li>Cartão 12x de R$ 136,00</li>
           <li>Recorrente: R$ 196,00/mês</li>
         </ul>
         <a href="#garantir" class="plan-cta">Quero esse plano</a>
@@ -953,18 +993,18 @@
       <div class="plan-body">
         <p class="plan-name">Domínio Positiva</p>
         <p class="plan-desc">Cross + Hyrox de alta intensidade. Para quem não aceita meia performance.</p>
+        <p class="plan-old-price">De <span>R$226,00</span>/mês · <strong>economize R$60/mês</strong></p>
         <div class="plan-price">
           <span class="curr">R$</span>
           <span class="num">166</span>
           <span class="mo">/mês</span>
         </div>
-        <p class="plan-validity">⏰ Válido até 31/07/26</p>
+        <p class="plan-validity">🎉 Preço de aniversário · válido até 31/07/26</p>
         <ul class="plan-features">
           <li>Treinos Cross e Hyrox</li>
           <li>Diagnóstico Corporal Anovetor incluso</li>
           <li>+R$50/mês para musculação também</li>
-          <li>PIX anual: R$ 1.992,00</li>
-          <li>Cartão 12x de R$ 186,00</li>
+          <li>Cartão 12x de R$ 166,00</li>
           <li>Recorrente: R$ 226,00/mês</li>
         </ul>
         <a href="#garantir" class="plan-cta">Quero esse plano</a>
@@ -1118,6 +1158,10 @@
 <section class="faq-strip">
   <p class="section-label" style="text-align:left;margin-bottom:8px">Dúvidas frequentes</p>
   <div class="faq-item">
+    <div class="faq-q">Por que o preço está tão mais baixo que o normal?</div>
+    <div class="faq-a">Estamos comemorando <strong>11 anos da Positiva Club</strong> e liberamos o menor preço do ano nos planos anuais (Cartão 12x e Recorrente). É uma condição por tempo limitado, válida até 31/07/26 — depois os planos voltam ao valor normal.</div>
+  </div>
+  <div class="faq-item">
     <div class="faq-q">Qual o horário de funcionamento?</div>
     <div class="faq-a">Segunda a sexta das 05h às 22h — Sábado das 08h às 14h — Domingos e feriados das 09h às 13h.</div>
   </div>
@@ -1139,14 +1183,14 @@
   </div>
   <div class="faq-item">
     <div class="faq-q">Há fidelidade nos planos?</div>
-    <div class="faq-a">Planos anuais (PIX, Cartão 12x e Recorrente 12 meses) têm fidelidade de 12 meses. O Mensal Livre não possui fidelidade. Cancelamento antecipado gera multa de 10% sobre o saldo restante.<br><br>⚠️ <strong>Ao cancelar o plano, todos os benefícios são perdidos imediatamente</strong>, incluindo:<br>• <strong>Isenção de adesão</strong> — taxa de cadastro cobrada na reativação de qualquer plano;<br>• <strong>Brindes</strong> — itens de boas-vindas (ex: squeeze, camiseta) concedidos na adesão;<br>• <strong>Descontos</strong> — condições especiais de preço válidas apenas durante a vigência do plano ativo.</div>
+    <div class="faq-a">Planos anuais (Cartão 12x e Recorrente 12 meses) têm fidelidade de 12 meses. O Mensal Livre não possui fidelidade. Cancelamento antecipado gera multa de 10% sobre o saldo restante.<br><br>⚠️ <strong>Ao cancelar o plano, todos os benefícios são perdidos imediatamente</strong>, incluindo:<br>• <strong>Isenção de adesão</strong> — taxa de cadastro cobrada na reativação de qualquer plano;<br>• <strong>Brindes</strong> — itens de boas-vindas (ex: squeeze, camiseta) concedidos na adesão;<br>• <strong>Descontos</strong> — condições especiais de preço válidas apenas durante a vigência do plano ativo.</div>
   </div>
 </section>
 
 <!-- ── FOOTER ── -->
 <footer>
   <p><strong>Positiva Club</strong> — Bem-estar na sua melhor forma.<br>
-  Válido até 31/07/2026. Vagas limitadas. Condições sujeitas a alteração sem aviso prévio.</p>
+  Oferta especial de aniversário — 11 anos Positiva Club. Válido até 31/07/2026. Vagas limitadas. Condições sujeitas a alteração sem aviso prévio.</p>
 </footer>
 
 <!-- ── FLOATING CTA ── -->
