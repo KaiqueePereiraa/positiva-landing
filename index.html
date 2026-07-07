@@ -1254,12 +1254,12 @@
 
     let sendFailed = false;
     try {
-      await fetch(WEBHOOK_URL, {
+      const res = await fetch(WEBHOOK_URL, {
         method: 'POST',
-        headers: { 'Content-Type': 'text/plain' },
-        body: JSON.stringify(payload),
-        mode: 'no-cors'
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
       });
+      if (!res.ok) sendFailed = true;
     } catch(err) {
       console.error('Webhook error:', err);
       sendFailed = true;
