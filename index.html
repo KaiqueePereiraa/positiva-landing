@@ -1208,7 +1208,9 @@
 
   /* phone mask */
   document.getElementById('telefone').addEventListener('input', function(e) {
-    let v = e.target.value.replace(/\D/g,'').substring(0,11);
+    let v = e.target.value.replace(/\D/g,'');
+    if (v.length > 11 && v.startsWith('55')) v = v.slice(2);
+    v = v.substring(0,11);
     if (v.length > 10) v = v.replace(/^(\d{2})(\d{5})(\d{4})$/,'($1) $2-$3');
     else if (v.length > 6) v = v.replace(/^(\d{2})(\d{4})(\d*)$/,'($1) $2-$3');
     else if (v.length > 2) v = v.replace(/^(\d{2})(\d*)$/,'($1) $2');
