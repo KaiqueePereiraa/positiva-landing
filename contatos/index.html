@@ -240,6 +240,105 @@
 
   .unit-btn:hover .unit-arrow { transform: translateX(3px); }
 
+  /* ── ADDRESSES ── */
+  .addresses {
+    width: 100%;
+    max-width: 620px;
+    margin-bottom: 16px;
+  }
+
+  .addr-heading {
+    font-family: var(--font-cond);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: center;
+    margin-bottom: 18px;
+  }
+
+  .addr-list {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .addr-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: rgba(17,24,39,0.6);
+    border: 1px solid var(--dark-border);
+    border-radius: 16px;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: var(--white);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .addr-btn:hover {
+    border-color: #6fa8ff;
+    background: rgba(23,33,54,0.75);
+    transform: translateY(-2px);
+  }
+
+  .addr-btn:active { transform: translateY(0) scale(0.99); }
+
+  .addr-icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(111,168,255,0.12);
+    border: 1px solid rgba(111,168,255,0.32);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .addr-icon svg { width: 20px; height: 20px; }
+
+  .addr-info { flex: 1; min-width: 0; }
+
+  .addr-name {
+    font-family: var(--font-cond);
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .addr-text {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 13.5px;
+    color: var(--muted);
+    line-height: 1.35;
+  }
+
+  .addr-open {
+    flex-shrink: 0;
+    font-family: var(--font-cond);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: #6fa8ff;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    .addr-btn { align-items: flex-start; }
+    .addr-open span { display: none; }
+  }
+
   /* ── FOOTER ── */
   footer {
     position: relative;
@@ -324,6 +423,55 @@
       <span class="unit-arrow">→</span>
     </a>
   </nav>
+
+  <section class="addresses" aria-label="Endereço das unidades">
+    <p class="addr-heading">Endereço das unidades</p>
+    <div class="addr-list">
+      <a class="addr-btn" href="https://www.google.com/maps/search/?api=1&query=R.%20Dom%20Pedro%20II%2C%20197%20-%20Parque%20Res.%20Laranjeiras%2C%20Serra%20-%20ES%2C%2029165-370" target="_blank" rel="noopener">
+        <span class="addr-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6fa8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="addr-info">
+          <span class="addr-name">Positiva Club</span>
+          <span class="addr-text">R. Dom Pedro II, 197 - Parque Res. Laranjeiras, Serra - ES, 29165-370</span>
+        </span>
+        <span class="addr-open"><span>Ver no mapa</span> ↗</span>
+      </a>
+
+      <a class="addr-btn" href="https://www.google.com/maps/search/?api=1&query=R.%20Dom%20Pedro%20II%2C%20185%20-%20Parque%20Res.%20Laranjeiras%2C%20Serra%20-%20ES%2C%2029165-370" target="_blank" rel="noopener">
+        <span class="addr-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6fa8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="addr-info">
+          <span class="addr-name">Positiva Cross</span>
+          <span class="addr-text">R. Dom Pedro II, 185 - Parque Res. Laranjeiras, Serra - ES, 29165-370</span>
+        </span>
+        <span class="addr-open"><span>Ver no mapa</span> ↗</span>
+      </a>
+
+      <a class="addr-btn" href="https://www.google.com/maps/search/?api=1&query=R.%20Machado%20de%20Assis%2C%20260%20-%20Parque%20Res.%20Laranjeiras%2C%20Serra%20-%20ES%2C%2029165-490" target="_blank" rel="noopener">
+        <span class="addr-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6fa8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="addr-info">
+          <span class="addr-name">Positiva Acqua Laranjeiras</span>
+          <span class="addr-text">R. Machado de Assis, 260 - Parque Res. Laranjeiras, Serra - ES, 29165-490</span>
+        </span>
+        <span class="addr-open"><span>Ver no mapa</span> ↗</span>
+      </a>
+
+      <a class="addr-btn" href="https://www.google.com/maps/search/?api=1&query=R.%20Dep.%20Darc%C3%AD%20Castelo%20Mendon%C3%A7a%2C%2087%20-%20Republica%2C%20Vit%C3%B3ria%20-%20ES%2C%2029075-160" target="_blank" rel="noopener">
+        <span class="addr-icon">
+          <svg viewBox="0 0 24 24" fill="none" stroke="#6fa8ff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+        </span>
+        <span class="addr-info">
+          <span class="addr-name">Positiva Acqua República</span>
+          <span class="addr-text">R. Dep. Darcí Castelo Mendonça, 87 - República, Vitória - ES, 29075-160</span>
+        </span>
+        <span class="addr-open"><span>Ver no mapa</span> ↗</span>
+      </a>
+    </div>
+  </section>
 </div>
 
 <footer>
