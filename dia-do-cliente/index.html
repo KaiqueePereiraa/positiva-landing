@@ -207,7 +207,36 @@
 
   .unit-info { flex: 1; min-width: 0; }
 
+  .unit-city {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-family: var(--font-cond);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    padding: 3px 9px 3px 7px;
+    border-radius: 100px;
+    margin-bottom: 7px;
+  }
+
+  .unit-city svg { width: 11px; height: 11px; }
+
+  .unit-city.city-serra {
+    background: rgba(111,168,255,0.14);
+    border: 1px solid rgba(111,168,255,0.4);
+    color: #8fbaff;
+  }
+
+  .unit-city.city-vitoria {
+    background: rgba(255,184,77,0.14);
+    border: 1px solid rgba(255,184,77,0.4);
+    color: #ffc46b;
+  }
+
   .unit-name {
+    display: block;
     font-family: var(--font-head);
     font-size: 26px;
     letter-spacing: 0.01em;
@@ -302,22 +331,15 @@
   <p class="sub">Grupo exclusivo no WhatsApp com as <strong>condições especiais do Dia do Cliente</strong>. Escolha sua unidade e entre agora — vagas limitadas.</p>
 
   <nav class="units" aria-label="Grupos VIP por unidade">
-    <a class="unit-btn" href="https://chat.whatsapp.com/JwjedfOTvg9FdhldgYA2FL?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener">
-      <span class="unit-icon">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#4ee08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
-      </span>
-      <span class="unit-info">
-        <span class="unit-name">Positiva Club</span>
-        <span class="unit-tag">Grupo VIP <span class="dot">•</span> Musculação e aulas coletivas</span>
-      </span>
-      <span class="unit-arrow">Entrar →</span>
-    </a>
-
     <a class="unit-btn" href="https://chat.whatsapp.com/GTvJ8ZWuMvf70JhHP1o1dW?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener">
       <span class="unit-icon">
         <svg viewBox="0 0 24 24" fill="none" stroke="#4ee08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </span>
       <span class="unit-info">
+        <span class="unit-city city-serra">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Serra
+        </span>
         <span class="unit-name">Positiva Acqua Laranjeiras</span>
         <span class="unit-tag">Grupo VIP <span class="dot">•</span> Natação e hidroginástica</span>
       </span>
@@ -329,8 +351,27 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="#4ee08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
       </span>
       <span class="unit-info">
+        <span class="unit-city city-vitoria">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Vitória
+        </span>
         <span class="unit-name">Positiva Acqua República</span>
         <span class="unit-tag">Grupo VIP <span class="dot">•</span> Natação e hidroginástica</span>
+      </span>
+      <span class="unit-arrow">Entrar →</span>
+    </a>
+
+    <a class="unit-btn" href="https://chat.whatsapp.com/JwjedfOTvg9FdhldgYA2FL?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener">
+      <span class="unit-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4ee08a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+      </span>
+      <span class="unit-info">
+        <span class="unit-city city-serra">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5A2.5 2.5 0 1 1 12 6.5a2.5 2.5 0 0 1 0 5z"/></svg>
+          Serra
+        </span>
+        <span class="unit-name">Positiva Club</span>
+        <span class="unit-tag">Grupo VIP <span class="dot">•</span> Musculação e aulas coletivas</span>
       </span>
       <span class="unit-arrow">Entrar →</span>
     </a>
