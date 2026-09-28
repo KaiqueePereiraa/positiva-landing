@@ -339,6 +339,88 @@
     .addr-open span { display: none; }
   }
 
+  /* ── JOBS CTA ── */
+  .jobs {
+    width: 100%;
+    max-width: 620px;
+    margin-bottom: 8px;
+  }
+
+  .jobs-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    background: transparent;
+    border: 1px dashed rgba(190,245,117,0.45);
+    border-radius: 16px;
+    padding: 16px 18px;
+    text-decoration: none;
+    color: var(--white);
+    transition: transform 0.25s ease, border-color 0.25s ease, background 0.25s ease;
+  }
+
+  .jobs-btn:hover {
+    border-style: solid;
+    border-color: var(--lime);
+    background: rgba(190,245,117,0.06);
+    transform: translateY(-2px);
+  }
+
+  .jobs-btn:active { transform: translateY(0) scale(0.99); }
+
+  .jobs-icon {
+    flex-shrink: 0;
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: rgba(190,245,117,0.1);
+    border: 1px solid rgba(190,245,117,0.35);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .jobs-icon svg { width: 20px; height: 20px; }
+
+  .jobs-text { flex: 1; min-width: 0; }
+
+  .jobs-title {
+    display: block;
+    font-family: var(--font-cond);
+    font-size: 15px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 2px;
+  }
+
+  .jobs-sub {
+    display: block;
+    font-family: var(--font-body);
+    font-size: 13px;
+    color: var(--muted);
+  }
+
+  .jobs-open {
+    flex-shrink: 0;
+    font-family: var(--font-cond);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--lime);
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    white-space: nowrap;
+  }
+
+  @media (max-width: 480px) {
+    .jobs-open span { display: none; }
+  }
+
   /* ── FOOTER ── */
   footer {
     position: relative;
@@ -471,6 +553,19 @@
         <span class="addr-open"><span>Ver no mapa</span> ↗</span>
       </a>
     </div>
+  </section>
+
+  <section class="jobs" aria-label="Trabalhe conosco">
+    <a class="jobs-btn" href="https://positivaclub.vagas.solides.com.br" target="_blank" rel="noopener">
+      <span class="jobs-icon">
+        <svg viewBox="0 0 24 24" fill="none" stroke="var(--lime)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/><path d="M2 13h20"/></svg>
+      </span>
+      <span class="jobs-text">
+        <span class="jobs-title">Trabalhe Conosco</span>
+        <span class="jobs-sub">Confira as vagas abertas na Positiva</span>
+      </span>
+      <span class="jobs-open"><span>Ver vagas</span> ↗</span>
+    </a>
   </section>
 </div>
 
